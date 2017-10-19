@@ -22,4 +22,8 @@ Total Hands: 1000
 Total Hands: 10000
 3s: 809 Straight: 1089 Flush: 435 Full House: 540 Quads: 39
 3s: 8.09% Straight: 10.89% Flush: 4.35% Full House: 5.40% Quads: 0.39%
+➜  psyduck-poker git:(master) ✗ python pokersim.py --community 7cTsAs 100000
+Total Hands: 100000
+3s: 8055 Straight: 10802 Flush: 4390 Full House: 5492 Quads: 386
+3s: 8.05% Straight: 10.80% Flush: 4.39% Full House: 5.49% Quads: 0.39%
 ```
