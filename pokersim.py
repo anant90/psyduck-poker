@@ -417,8 +417,9 @@ def best_five(hand, community):
     #
     # Compare current best to five cards including all three community cards out of 3, and 2 in hand cards out of 6
     #
+
     for m in range(6):
-        for n in range(m+1, 6):
+        for n in range(n+1, 6):
             comparehand = hand_copy(community)
             comparehand.append(hand[m])
             comparehand.append(hand[n])

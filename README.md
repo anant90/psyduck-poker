@@ -7,25 +7,19 @@ Requires as input a number of iterations to run, as well as three flop cards.
 The program outputs number of 3s of a kind, straights, flushes, full houses and quads in absolute terms as well as percentage.
 
 # Sample Run
+Run atleast 1000 iterations to get decent results:
 
 ```
-➜  psyduck-poker python pokersim.py --community 7cTsAs 100
+➜  psyduck-poker git:(master) ✗ python pokersim.py --community 7cTsAs 100
 Total Hands: 100
-3s: 11 Straight: 6 Flush: 4 Full House: 1 Quads: 0
-3s: 11.00% Straight: 6.00% Flush: 4.00% Full House: 1.00% Quads: 0.00%
-
-➜  psyduck-poker python pokersim.py --community 7cTsAs 1000
+3s: 7 Straight: 13 Flush: 6 Full House: 3 Quads: 1
+3s: 7.00% Straight: 13.00% Flush: 6.00% Full House: 3.00% Quads: 1.00%
+➜  psyduck-poker git:(master) ✗ python pokersim.py --community 7cTsAs 1000
 Total Hands: 1000
-3s: 92 Straight: 99 Flush: 45 Full House: 58 Quads: 1
-3s: 9.20% Straight: 9.90% Flush: 4.50% Full House: 5.80% Quads: 0.10%
-
-➜  psyduck-poker git:(master) python pokersim.py --community 7cTsAs 10000
+3s: 76 Straight: 109 Flush: 55 Full House: 62 Quads: 9
+3s: 7.60% Straight: 10.90% Flush: 5.50% Full House: 6.20% Quads: 0.90%
+➜  psyduck-poker git:(master) ✗ python pokersim.py --community 7cTsAs 10000
 Total Hands: 10000
-3s: 823 Straight: 1102 Flush: 415 Full House: 552 Quads: 34
-3s: 8.23% Straight: 11.02% Flush: 4.15% Full House: 5.52% Quads: 0.34%
-
-➜  psyduck-poker git:(master) python pokersim.py --community 7cTsAs 100000
-Total Hands: 100000
-3s: 8298 Straight: 10532 Flush: 4319 Full House: 5503 Quads: 411
-3s: 8.30% Straight: 10.53% Flush: 4.32% Full House: 5.50% Quads: 0.41%
+3s: 809 Straight: 1089 Flush: 435 Full House: 540 Quads: 39
+3s: 8.09% Straight: 10.89% Flush: 4.35% Full House: 5.40% Quads: 0.39%
 ```
