@@ -6,6 +6,15 @@
 import argparse
 import random
 
+from flask import Flask, request
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    flop = request.args.get('flop')
+    iterations = request.args.get('iterations')
+    return main(flop, int(iterations))
+
 
 def readable_hand(cards):
     #
@@ -432,26 +441,9 @@ def best_five(hand, community):
     return currentbest
 
 
-def main():
-    #
-    # Process command-line arguments
-    #
-    parser = argparse.ArgumentParser(description='Run a Monte Carlo simulation \
-                                     of a Texas Hold\'em Poker Hand')
-    parser.add_argument('iterations', metavar='num_iterations', type=int,
-                        help='Number of simulations to run. For accurate \
-                        results, run at least 1000 simulations.')
-    parser.add_argument('--community', type=str,
-                        help="Community cards in format [rank][suit], \
-                        example AdTsXx. You may use Xx for up to three \
-                        simulated cards")
-    args = parser.parse_args()
-    if args.iterations >= 1:
-        iterations = args.iterations
-    else:
-        iterations = 1
-
-    temp_community_string = args.community
+def main(community_arg="AhAdAs", iterations_arg=1):
+    iterations = iterations_arg
+    temp_community_string = community_arg
     community = ""
     while temp_community_string:
         current_community_card = temp_community_string[:2]
@@ -492,17 +484,13 @@ def main():
             totals[4]+=1
 
     # Print results
-    print "Total Hands: %i" % (iterations)
-    print "3s: %i Straight: %i Flush: %i Full House: %i Quads: %i" % (totals[0], totals[1], totals[2], totals[3], totals[4])
-    print "3s: %.2f%% Straight: %.2f%% Flush: %.2f%% Full House: %.2f%% Quads: %.2f%%" % \
+    return_string = ""
+    return_string += "Total Hands: %i\n" % (iterations)
+    return_string += "3s: %i Straight: %i Flush: %i Full House: %i Quads: %i\n" % (totals[0], totals[1], totals[2], totals[3], totals[4])
+    return_string += "3s: %.2f%% Straight: %.2f%% Flush: %.2f%% Full House: %.2f%% Quads: %.2f%% \n" % \
         (100 * round((totals[0] / (iterations + 0.0)), 4),
          100 * round((totals[1] / (iterations + 0.0)), 4),
          100 * round((totals[2] / (iterations + 0.0)), 4),
          100 * round((totals[3] / (iterations + 0.0)), 4),
          100 * round((totals[4] / (iterations + 0.0)), 4))
-
-#
-# Main Program Body
-#
-if __name__ == '__main__':
-    main()
+    return return_string
