@@ -466,8 +466,6 @@ def main():
     totals = [0, 0, 0, 0, 0]
     # Monte Carlo Simulation
     for _ in range(iterations):
-        community_original = hand_to_numeric(community)
-        community_temp = community_original[:]
 
         hand_original = hand_to_numeric("XxXxXxXxXxXx")
         hand_temp = hand_original[:]
