@@ -2,8 +2,7 @@
 Python implementation of a Monte Carlo Simulator of Psyduck's Poker
 
 # Overview
-This project provides a Monte Carlo simulator for Texas Hold'em hands.
-It requires as input a number of iterations to run, as well as three flop cards.
+Requires as input a number of iterations to run, as well as three flop cards.
 
 The program outputs number of 3s of a kind, straights, flushes, full houses and quads in absolute terms as well as percentage.
 
