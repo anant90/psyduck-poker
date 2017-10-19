@@ -6,6 +6,10 @@ Requires as input a number of iterations to run, as well as three flop cards.
 
 The program outputs number of 3s of a kind, straights, flushes, full houses and quads in absolute terms as well as percentage.
 
+# How to use
+Change the parameters in the url to change the input. http://psyduck-poker.herokuapp.com/?iterations=1000&flop=AsAdAh
+Invalid inputs will give you a 500 Error.
+
 # Sample Run
 Run atleast 1000 iterations to get decent results:
 
