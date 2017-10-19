@@ -7,7 +7,7 @@ It requires as input a number of iterations to run, as well as three flop cards.
 
 The program outputs number of 3s of a kind, straights, flushes, full houses and quads in absolute terms as well as percentage.
 
-#Sample Run
+# Sample Run
 
 ```
 ➜  psyduck-poker python pokersim.py --community 7cTsAs 100
